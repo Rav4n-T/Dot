@@ -1,0 +1,22 @@
+# 加载 ~/.config/bash 下的所有配置文件
+
+# 加载 functions 目录中的函数
+for file in ~/.config/bash/functions/*; do
+  [ -r "$file" ] && source "$file"
+done
+
+# 加载 conf 目录中的配置
+for file in ~/.config/bash/conf/*; do
+  [ -r "$file" ] && source "$file"
+done
+
+# Enable bash-completion if it is available
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+
+# 加载提示符设置
+# [[ -f ~/.config/bash/prompt ]] && source ~/.config/bash/prompt
+
+eval "$(zoxide init bash)"

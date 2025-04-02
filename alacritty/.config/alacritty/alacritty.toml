@@ -1,0 +1,12 @@
+[general]
+import = [
+    "themes/catppuccin_mocha.toml"
+]
+
+[font]
+normal = { family = "RecMonoCasual Nerd Font", style = "Regular"}
+size = 24.0
+
+[cursor]
+style = { shape = "Beam", blinking = "Never" }
+

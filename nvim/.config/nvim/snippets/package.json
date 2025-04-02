@@ -1,0 +1,120 @@
+{
+  "name": "raven-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "plaintext",
+          "markdown",
+          "tex",
+          "html",
+          "global",
+          "all"
+        ],
+        "path": "./global.json"
+      },
+      {
+        "language": [
+          "license"
+        ],
+        "path": "./license.json"
+      },
+      {
+        "language": [
+          "gitcommit",
+          "NeogitCommitMessage"
+        ],
+        "path": "./gitcommit.json"
+      },
+      {
+        "language": "lua",
+        "path": "./lua/lua.json"
+      },
+      {
+        "language": "luadoc",
+        "path": "./lua/luadoc.json"
+      },
+      {
+        "language": "go",
+        "path": "./go/go.json"
+      },
+      {
+        "language": "rust",
+        "path": "./rust/rust.json"
+      },
+      {
+        "language": "rustdoc",
+        "path": "./rust/rustdoc.json"
+      },
+      {
+        "language": "sql",
+        "path": "./sql.json"
+      },
+      {
+        "language": [
+          "markdown",
+          "rmd"
+        ],
+        "path": "./markdown.json"
+      },
+      {
+        "language": [
+          "html",
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./web/html.json"
+      },
+      {
+        "language": [
+          "css",
+          "scss",
+          "sass",
+          "less",
+          "stylus"
+        ],
+        "path": "./web/css.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "svelte"
+        ],
+        "path": "./js/js.json"
+      },
+      {
+        "language": [
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./js/jsx.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "typescriptreact"
+        ],
+        "path": "./js/ts.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./js/tsx.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/python.json"
+      },
+      {
+        "language": "http",
+        "path": "./http.json"
+      }
+    ]
+  }
+}

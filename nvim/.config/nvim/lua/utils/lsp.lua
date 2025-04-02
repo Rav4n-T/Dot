@@ -1,0 +1,162 @@
+local M = {}
+
+-- set lsp keymaps
+M.setLspKeymap = function()
+	local map = vim.keymap.set
+	vim.api.nvim_create_autocmd("LspAttach", {
+		group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+		callback = function(ev)
+			-- Enable completion triggered by <c-x><c-o>
+			vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+			-- Buffer local mappings.
+			-- See `:help vim.lsp.*` for documentation on any of the below functions
+			-- map(
+			-- 	"n",
+			-- 	"gd",
+			-- 	-- vim.lsp.buf.definition,
+			-- 	-- "<cmd>Telescope lsp_definitions<cr>",
+			-- 	"<cmd>FzfLua lsp_definitions<cr>",
+			-- 	{ desc = "go to definition", buffer = ev.buf, remap = true, silent = true }
+			-- )
+			map(
+				"n",
+				"gt",
+				-- vim.lsp.buf.type_definition,
+				-- "<cmd>Telescope lsp_type_definitions<cr>",
+				"<cmd>FzfLua lsp_typedefs<cr>",
+				{ desc = "go to type definition", buffer = ev.buf, remap = true, silent = true }
+			)
+			-- map(
+			-- 	"n",
+			-- 	"gD",
+			-- 	vim.lsp.buf.declaration,
+			-- 	{ desc = "go to declaration", buffer = ev.buf, remap = true, silent = true }
+			-- )
+			-- map("n", "K", vim.lsp.buf.hover, { desc = "lsp hover", buffer = ev.buf, remap = true, silent = true })
+			-- map(
+			-- 	"n",
+			-- 	"gi",
+			-- 	-- vim.lsp.buf.implementation,
+			-- 	-- "<cmd>Telescope lsp_implementations<cr>",
+			-- 	"<cmd>FzfLua lsp_implementations<cr>",
+			-- 	{ desc = "go to implementation", buffer = ev.buf, remap = true, silent = true }
+			-- )
+			-- map(
+			-- 	"n",
+			-- 	"gr",
+			-- 	-- vim.lsp.buf.references,
+			-- 	-- "<cmd>Telescope lsp_references<cr>",
+			-- 	"<cmd>FzfLua lsp_references<cr>",
+			-- 	{ desc = "go to references", buffer = ev.buf, remap = true, silent = true }
+			-- )
+			map(
+				"n",
+				"gI",
+				-- "<cmd>Telescope lsp_incoming_calls<cr>",
+				"<cmd>FzfLua lsp_incoming_calls<cr>",
+				{ desc = "go to incoming calls", buffer = ev.buf, remap = true, silent = true }
+			)
+			map(
+				"n",
+				"go",
+				-- "<cmd>Telescope lsp_outgoing_calls<cr>",
+				"<cmd>FzfLua lsp_outgoing_calls<cr>",
+				{ desc = "go to outgoing calls", buffer = ev.buf, remap = true, silent = true }
+			)
+			map(
+				"n",
+				"<C-f>",
+				vim.lsp.buf.signature_help,
+				{ desc = "show signature help doc", buffer = ev.buf, remap = true, silent = true }
+			)
+			map(
+				"n",
+				"<space>ar",
+				vim.lsp.buf.rename,
+				{ desc = "rename current word", buffer = ev.buf, remap = true, silent = true }
+			)
+			map(
+				{ "n", "v" },
+				"<space>ac",
+				vim.lsp.buf.code_action,
+				{ desc = "code actions", buffer = ev.buf, remap = true, silent = true }
+			)
+			map({ "n" }, "<space>ai", function()
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+			end, { desc = "toggle inlay hint", buffer = ev.buf, remap = true, silent = true })
+			map(
+				"n",
+				"<space>wa",
+				vim.lsp.buf.add_workspace_folder,
+				{ desc = "add workspace folder", buffer = ev.buf, remap = true, silent = true }
+			)
+			map(
+				"n",
+				"<space>wr",
+				vim.lsp.buf.remove_workspace_folder,
+				{ desc = "remove workspace folder", buffer = ev.buf, remap = true, silent = true }
+			)
+			map("n", "<space>wl", function()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			end, { desc = "show workspace folders list", buffer = ev.buf, remap = true, silent = true })
+		end,
+	})
+end
+
+M.setVtsls = function()
+	local group = vim.api.nvim_create_augroup("nvim_vtsls", { clear = true })
+	vim.api.nvim_create_autocmd("LspAttach", {
+		group = group,
+		callback = function(args)
+			if assert(vim.lsp.get_client_by_id(args.data.client_id)).name == "vtsls" then
+				require("vtsls")._on_attach(args.data.client_id, args.buf)
+				vim.api.nvim_del_augroup_by_name("nvim_vtsls")
+			end
+		end,
+	})
+end
+
+-- diagnostics signs
+M.setDiagnosticsicon = function(opt)
+	for name, icon in pairs(require("config.options").icons.diagnostics) do
+		name = "DiagnosticSign" .. name
+		vim.fn.sign_define(name, {
+			text = icon, -- icon | ""
+			texthl = name, -- "name" | ""
+			linehl = "",
+			numhl = "", -- "name" | ""
+		})
+	end
+	vim.diagnostic.config(opt)
+end
+
+M.AttachFn = function(_, bufnr)
+	-- vim.api.nvim_create_autocmd("CursorHold", {
+	-- 	buffer = bufnr,
+	-- 	callback = function()
+	-- 		local hover_opts = {
+	-- 			focusable = false,
+	-- 			close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+	-- 			border = "none",
+	-- 			source = "always",
+	-- 			prefix = " ",
+	-- 			scope = "cursor",
+	-- 		}
+	-- 		vim.diagnostic.open_float(nil, hover_opts)
+	-- 	end,
+	-- })
+end
+
+M.setFloatWindow = function()
+	local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+	local custom_open_floating_preview = function(contents, syntax, opts, ...)
+		opts = opts or {}
+		opts.border = opts.border or "single"
+		opts.max_width = opts.max_width or 50
+		return orig_util_open_floating_preview(contents, syntax, opts, ...)
+	end
+	vim.lsp.util.open_floating_preview = custom_open_floating_preview
+end
+
+return M
