@@ -1,4 +1,4 @@
-set -x TMUX_ENABLED false
+set -x TMUX_ENABLED true
 
 if status is-interactive
 
