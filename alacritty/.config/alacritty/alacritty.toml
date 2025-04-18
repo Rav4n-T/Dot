@@ -1,12 +1,78 @@
+# Alacritty - TOML configuration file format.
+
+# DESCRIPTION 
+# An example configuration file for Alacritty preconfigured with default values.
+
+# SYNTAX
+# Alacritty's configuration file uses the TOML format. 
+# The format's specification can be found at https://toml.io/en/v1.0.0.
+
+# GENERAL
 [general]
 import = [
-    "themes/catppuccin_mocha.toml"
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/themes/catppuccin-latte.toml"
+  # "~/.config/alacritty/themes/catppuccin-frappe.toml"
+  # "~/.config/alacritty/themes/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/themes/catppuccin-mocha.toml",
+  "~/.config/alacritty/themes/everforest_dark.toml",
+
+  # other config
+  "~/.config/alacritty/ui.toml",
+  "~/.config/alacritty/keymaps.toml",
 ]
+live_config_reload = true
+ipc_socket = true
 
-[font]
-normal = { family = "RecMonoCasual Nerd Font", style = "Regular"}
-size = 24.0
+# [shell]
+# program = "/usr/bin/fish"
+# args = ["-l"]
 
-[cursor]
-style = { shape = "Beam", blinking = "Never" }
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
 
+[scrolling]
+history = 10000
+multiplier = 3
+
+[bell]
+animation = "Linear" # "Ease" | "EaseOut" | "EaseOutSine" | "EaseOutQuad" | "EaseOutCubic" | "EaseOutQuart" | "EaseOutQuint" | "EaseOutExpo" | "EaseOutCirc" | "Linear"
+duration = 0
+color = "#ffffff"
+command = "None" # "<string>" | { program = "<string>", args = ["<string>",] }
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = false
+
+[terminal]
+osc52 = "OnlyCopy" # "Disabled" | "OnlyCopy" | "OnlyPaste" | "CopyPaste"
+
+[mouse]
+hide_when_typing = false
+bindings = [
+  { mouse = "Right", mods = "Control", action = "Paste" },
+]
+# mouse = "Middle" | "Left" | "Right" | "Back" | "Forward" | <integer>
+# Mouse button which needs to be pressed to trigger this binding.
+# action = <keyboard.bindings.action> | "ExpandSelection"
+
+[[hints.enabled]]
+command = "xdg-open" # On Linux/BSD
+# command = "open" # On macOS
+# command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+
+# [debug]
+# render_timer = false
+# persistent_logging = true
+# log_level = "Warn" # "Off" | "Error" | "Warn" | "Info" | "Debug" | "Trace"
+# renderer = "None" # "glsl3" | "gles2" | "gles2_pure" | "None"
+# print_events = false
+# highlight_damage = false
+# prefer_egl = false

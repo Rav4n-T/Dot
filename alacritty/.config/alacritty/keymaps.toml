@@ -1,0 +1,223 @@
+# LIST OF ACTIONS
+
+# format:
+# action name
+# description of action function
+
+# Expandable List:
+
+
+#
+
+# Vi mode actions
+# Expandable List:
+
+    # SemanticLeft
+    # Move to start of semantically separated word.
+
+    # SemanticRight
+    # Move to start of next semantically separated word.
+
+    # SemanticLeftEnd
+    # Move to end of previous semantically separated word.
+
+    # SemanticRightEnd
+    # Move to end of semantically separated word.
+
+    # WordLeft
+    # Move to start of whitespace separated word.
+
+    # WordRight
+    # Move to start of next whitespace separated word.
+
+    # WordLeftEnd
+    # Move to end of previous whitespace separated word.
+
+    # WordRightEnd
+    # Move to end of whitespace separated word.
+
+    # Bracket
+    # Move to opposing bracket.
+
+    # ToggleNormalSelection
+    # Toggle normal vi selection.
+
+    # ToggleLineSelection
+    # Toggle line vi selection.
+
+    # ToggleBlockSelection
+    # Toggle block vi selection.
+
+    # ToggleSemanticSelection
+    # Toggle semantic vi selection.
+
+    # SearchNext
+    # Jump to the beginning of the next match.
+
+    # SearchPrevious
+    # Jump to the beginning of the previous match.
+
+    # SearchStart
+    # Jump to the next start of a match to the left of the origin.
+
+    # SearchEnd
+    # Jump to the next end of a match to the right of the origin.
+
+    # Open
+    # Launch the URL below the vi mode cursor.
+
+    # CenterAroundViCursor
+    # Centers the screen around the vi mode cursor.
+
+    # InlineSearchForward
+    # Search forward within the current line.
+
+    # InlineSearchBcakward
+    # Search backward within the current line.
+
+    # InlineSearchForwardShort
+    # Search forward within the current line, stopping just short of the character.
+
+    # InlineSearchBackwardShort
+    # Search backward within the current line, stopping just short of the character.
+
+    # InlineSearchNext
+    # Jump to the next inline search match.
+
+    # InlineSearchPrevious
+    # Jump to the previous inline search match.
+
+    # Search actions:
+    # SearchFocusNext
+
+    # Move the focus to the next search match.
+    # SearchFocusPrevious
+
+    # Move the focus to the previous search match.
+    # SearchConfirm
+
+    # Confirm the active search.
+    # SearchCancel
+
+    # Cancel the active search.
+    # SearchClear
+
+    # Reset the search regex.
+    # SearchDeleteWord
+
+    # Delete the last word in the search regex.
+    # SearchHistoryPrevious
+
+    # Go to the previous regex in the search history.
+    # SearchHistoryNext
+
+    # Go to the next regex in the search history.
+    # macOS exclusive:
+
+    # ToggleSimpleFullscreen
+    # Enter fullscreen without occupying another space.
+
+    # HideOtherApplications
+    # Hide all windows other than Alacritty.
+
+    # CreateNewTab
+    # Create new window in a tab.
+
+    # SelectNextTab
+    # Select next tab.
+
+    # SelectPreviousTab
+    # Select previous tab.
+
+    # SelectTab1
+    # Select the first tab.
+
+    # SelectTab2
+    # Select the second tab.
+
+    # SelectTab3
+    # Select the third tab.
+
+    # SelectTab4
+    # Select the fourth tab.
+
+    # SelectTab5
+    # Select the fifth tab.
+
+    # SelectTab6
+    # Select the sixth tab.
+
+    # SelectTab7
+    # Select the seventh tab.
+
+    # SelectTab8
+    # Select the eighth tab.
+
+    # SelectTab9
+    # Select the ninth tab.
+
+    # SelectLastTab
+    # Select the last tab.
+
+    # Linux/BSD exclusive:
+    # CopySelection
+
+    # Copy from the selection buffer.
+    # PasteSelection
+
+    # Paste from the selection buffer.
+    # Default: See alacritty-bindings(5)
+
+
+#
+
+# Example:
+
+# mods = "Command" | "Control" | "Option" | "Super" | "Shift" | "Alt"
+# mode = "AppCursor" | "AppKeypad" | "Search" | "Alt" | "Vi"
+
+[keyboard]
+bindings = [
+  # { <key>, <mods>, <mode>, <action> | <chars> },
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+  { key = "L", mods = "Control|Shift", chars = "l" },
+  # { key = "N", mods = "Control|Shift", action = "None" },
+  # { key = "N", mods = "Control|Shift", action = "Paste" },
+  # { key = "N", mods = "Control|Shift", action = "Copy" },
+  # { key = "N", mods = "Control|Shift", action = "ReceiveChar" },
+  # { key = "N", mods = "Control|Shift", action = "IncreaseFontSize" },
+  # { key = "N", mods = "Control|Shift", action = "DecreaseFontSize" },
+  # { key = "N", mods = "Control|Shift", action = "ResetFontSize" },
+  # { key = "N", mods = "Control|Shift", action = "ScrollPageUp" },
+  # { key = "N", mods = "Control|Shift", action = "ScrollPageDown" },
+  # { key = "N", mods = "Control|Shift", action = "ScrollHalfPageUp" },
+  # { key = "N", mods = "Control|Shift", action = "ScrollHalfPageDown" },
+  # { key = "N", mods = "Control|Shift", action = "ScrollLineUp" },
+  # { key = "N", mods = "Control|Shift", action = "ScrollLineDown" },
+  # { key = "N", mods = "Control|Shift", action = "ScrollToTop" },
+  # { key = "N", mods = "Control|Shift", action = "ScrollToBottom" },
+  # { key = "N", mods = "Control|Shift", action = "ClearHistory" },
+  # { key = "N", mods = "Control|Shift", action = "Hide" },
+  # { key = "N", mods = "Control|Shift", action = "Minimize" },
+  # { key = "N", mods = "Control|Shift", action = "Quit" },
+  # { key = "N", mods = "Control|Shift", action = "ClearLogNotice" },
+  # { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
+  # { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+  # { key = "N", mods = "Control|Shift", action = "ToggleFullscreen" },
+  # { key = "N", mods = "Control|Shift", action = "ToggleMaximized" },
+  # { key = "N", mods = "Control|Shift", action = "ClearSelection" },
+  { key = "M", mods = "Control|Shift", action = "ToggleViMode" },
+  # { key = "N", mods = "Control|Shift", action = "SearchForward" },
+  # { key = "N", mods = "Control|Shift", action = "SearchBackward" },
+  # vi mode
+   # { key = "k",  mode = "Vi", action = "Up" },
+   # { key = "j",  mode = "Vi", action = "Down" },
+   # { key = "h",  mode = "Vi", action = "Left" },
+   # { key = "l",  mode = "Vi", action = "Right" },
+   # { key = "0",  mode = "Vi", action = "First" },
+   # { key = "$",  mode = "Vi", action = "Last" },
+   # { key = "9",  mode = "Vi", action = "FirstOccupied" },
+   # { key = "g",  mode = "Vi", action = "High" },
+   # { key = "z",  mode = "Vi", action = "Middle" },
+   # { key = "G", mods = "Shift", mode = "Vi", action = "Low" },
+]
