@@ -1,5 +1,5 @@
-CGO_ENABLED=0
+CGO_ENABLED=1
 GO111MODULE=on
-GOMODCACHE=/home/rav4n/.local/share/go/pkg/mod
-GOPATH=/home/rav4n/.local/share/go
+GOMODCACHE=/home/Rav4n/.local/share/go/pkg/mod
+GOPATH=/home/Rav4n/.local/share/go
 GOPROXY=https://goproxy.cn
