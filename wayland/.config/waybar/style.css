@@ -1,0 +1,173 @@
+@import "style/everforest.css";
+
+* {
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+window#waybar {
+  /* background: transparent; */
+  background-color: @background;
+  border-radius: 0;
+  color: @foreground;
+  /* border-bottom: 1px solid #374145; */
+  /* opacity: 0.9; */
+}
+
+tooltip {
+  background: @background;
+  font-size: 16px;
+}
+
+tooltip label {
+  color: @foreground;
+}
+
+#workspaces {
+}
+
+#workspaces button {
+  padding: 0 10px;
+  color: @cyan;
+}
+
+#workspaces button.empty {
+  color: @foreground;
+}
+
+#workspaces button.visible {
+  color: @cyan;
+}
+
+#workspaces button.active {
+  color: @pink;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#disk,
+#cpu,
+#memory {
+  margin: 6px 8px;
+  color: @foreground;
+}
+
+#window {
+  margin: 6px 10px;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+#clock,
+#mpd,
+#network {
+  color: @foreground;
+  margin: 6px 0px;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+#mpd,
+#network {
+  margin: 6px 5px;
+}
+
+#battery {
+  color: @foreground;
+}
+
+#custom-shutdown,
+#custom-lock,
+#custom-reboot,
+#custom-firmware,
+#custom-suspend,
+#custom-divider {
+  padding: 0 5px;
+  margin: 6px 0px;
+  color: @cyan;
+}
+
+#custom-shutdown {
+  margin-right: 16px;
+}
+
+#custom-divider {
+  margin: 6px 0px;
+  padding: 0;
+}
+
+#pulseaudio,
+#custom-tray-collapsed,
+#tray {
+  margin: 0px 0px;
+}
+
+#pulseaudio {
+  color: @blue;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-color: @yellow;
+}
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 80px;
+  border-radius: 5px;
+  background-color: @sep;
+}
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background-color: @yellow;
+}
+
+#backlight {
+  color: @lime;
+}
+
+#backlight-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-color: @green;
+  border: none;
+}
+
+#backlight-slider trough {
+  min-height: 10px;
+  min-width: 80px;
+  border-radius: 5px;
+  background-color: @sep;
+}
+#backlight-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background-color: @green;
+}
+
+#tray {
+  padding-right: 15px;
+}
+
+#custom-notifications {
+  color: @amber;
+}
+
+#custom-sep {
+  color: @sep;
+}

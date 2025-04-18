@@ -1,0 +1,65 @@
+/* @define-color rosewater #f5e0dc; */
+/* @define-color flamingo #f2cdcd; */
+/* @define-color pink #f5c2e7; */
+/* @define-color mauve #cba6f7; */
+/* @define-color maroon #eba0ac; */
+/* @define-color peach #fab387; */
+/* @define-color green #a6e3a1; */
+/* @define-color teal #94e2d5; */
+/* @define-color sky #89dceb; */
+/* @define-color sapphire #74c7ec; */
+/* @define-color lavender #b4befe; */
+/**/
+/* @define-color text #D3C6AA; */
+/* @define-color subtext1 #D3C6AA; */
+/* @define-color subtext0 #9DA9A0; */
+/* @define-color overlay2 #859289; */
+/* @define-color overlay1 #7A8478; */
+/* @define-color overlay0 #56635F; */
+/* @define-color surface2 #4F585E; */
+/* @define-color surface1 #475258; */
+/* @define-color surface0 #3D484D; */
+/* @define-color mantle #232A2E; */
+/* @define-color crust #2D353B; */
+/**/
+/* @define-color tooltip_bg #475258; */
+/* @define-color text #D3C6AA; */
+/* @define-color subtext #D3C6AA; */
+/* @define-color workspace_normal #D3C6AA; */
+/* @define-color workspace_active #83c092; */
+/* @define-color workspace_hover #e67e80; */
+/* @define-color window_title #7fbbb3; */
+/* @define-color date_text #a7c080; */
+/**/
+/* @define-color black    #475258; */
+/* @define-color red      #e67e80; */
+/* @define-color green    #a7c080; */
+/* @define-color yellow   #dbbc7f; */
+/* @define-color blue     #7fbbb3; */
+/* @define-color magenta  #d699b6; */
+/* @define-color cyan     #83c092; */
+/* @define-color white    #d3c6aa; */
+/* @define-color background  #2d353b; */
+/* @define-color foreground  #d3c6aa; */
+
+@define-color background  #212B30;
+@define-color foreground  #C4C7C5;
+@define-color sep  #3F5360;
+
+@define-color white  #FFFFFF;
+@define-color black  #000000;
+@define-color red  #EC7875;
+@define-color pink  #EC407A;
+@define-color purple  #BA68C8;
+@define-color blue  #42A5F5;
+@define-color cyan  #4DD0E1;
+@define-color teal  #00B19F;
+@define-color green  #61C766;
+@define-color lime  #B9C244;
+@define-color yellow  #FDD835;
+@define-color amber  #FBC02D;
+@define-color orange  #E57C46;
+@define-color brown  #AC8476;
+@define-color indigo  #6C77BB;
+@define-color gray  #9E9E9E;
+@define-color blue-gray  #6D8895;

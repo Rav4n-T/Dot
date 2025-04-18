@@ -1,0 +1,120 @@
+@import "style/everforest.css";
+
+* {
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 18px;
+}
+
+window#waybar {
+  /* background: transparent; */
+  background-color: #272e33;
+  border-radius: 0;
+  /* border-bottom: 1px solid #374145; */
+  /* opacity: 0.9; */
+}
+
+tooltip {
+  background: @tooltip_bg;
+  opacity: 0.9;
+  border-radius: 8px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @tooltip_bg;
+  font-size: 16px;
+}
+
+tooltip label {
+  color: @subtext;
+}
+
+#workspaces {
+  color: #a7c080;
+  margin: 6px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #2e383c;
+  border-radius: 4px;
+}
+
+#workspaces button {
+  color: #a7c080;
+  padding: 0 10px;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#disk,
+#cpu,
+#memory {
+  margin: 6px 1px;
+  color: #d3c6aa;
+  background-color: #2e383c;
+}
+
+#disk,
+#cpu {
+  padding: 0 10px;
+}
+
+#window {
+  color: #d3c6aa;
+  background-color: #2e383c;
+  margin: 6px 10px;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+#clock,
+#mpris,
+#network {
+  color: #d3c6aa;
+  background-color: #2e383c;
+  margin: 6px 0px;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+#mpris,
+#network {
+  margin: 6px 5px;
+}
+
+#custom-shutdown,
+#custom-lock,
+#custom-reboot,
+#custom-firmware,
+#custom-suspend,
+#custom-divider {
+  color: #a7c080;
+  padding: 0 10px;
+  margin: 6px 0px;
+  background-color: #2e383c;
+}
+
+#custom-divider {
+  margin: 6px 0px;
+  padding: 0;
+}
+
+#pulseaudio,
+#custom-tray-collapsed,
+#tray {
+  margin: 6px 0px;
+  color: #a7c080;
+  background-color: #2e383c;
+}
+
+#tray {
+  padding-right: 15px;
+}
+
+#custom-notifications {
+  margin: 6px 8px;
+  padding: 0 10px;
+  color: #a7c080;
+  background-color: #2e383c;
+}

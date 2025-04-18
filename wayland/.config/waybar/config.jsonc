@@ -1,0 +1,279 @@
+{
+  "layer": "top",
+  "output": "eDP-1",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/sep",
+    "cpu",
+    "memory",
+    "disk",
+  ],
+
+  "modules-center": ["clock"],
+  "modules-right": [
+    "battery",
+    "network",
+    "custom/sep",
+    "pulseaudio",
+    "pulseaudio/slider",
+    "backlight",
+    "backlight/slider",
+    "custom/sep",
+    "group/sys-tray",
+    "custom/sep",
+    "custom/notifications",
+    "custom/sep",
+    "group/power",
+  ],
+
+  // left
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "sort-by-name": true,
+    "active-only": false,
+    "tooltip": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "default": "",
+      // "active": "",
+      // "default": "<span color='#7A8478'></span>",
+    },
+    "persistent-workspaces": {
+      "eDP-1": 6, // but only three on HDMI-A-1
+    },
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": "<span color='#FDD835'></span> {usage}%",
+    "max-length": 10,
+    "on-click": "/usr/bin/footclient -T Monitor /usr/bin/btm",
+    // "on-click": "/usr/bin/alacritty -T Monitor -e /usr/bin/btm",
+  },
+
+  "memory": {
+    "interval": 10,
+    "format": "<span color='#6C77BB'></span> {used}G",
+    "max-length": 10,
+    "tooltip": true,
+    "tooltip-format": "Memory - {used:0.1f}GB used",
+    "on-click": "/usr/bin/footclient -T Monitor /usr/bin/btm",
+    // "on-click": "/usr/bin/alacritty -T Monitor -e /usr/bin/btm",
+  },
+
+  "disk": {
+    "interval": 30,
+    "format": "<span color='#E57C46'></span> {percentage_used}%",
+    "path": "/",
+    "tooltip": true,
+    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+    "on-click": "/usr/bin/footclient -T Monitor /usr/bin/btm",
+    // "on-click": "/usr/bin/alacritty -T Monitor -e /usr/bin/btm",
+  },
+
+  // center
+  "clock": {
+    "format": "<span color='#EC7875'></span> {:%A, %d %B at %H:%M }",
+    "tooltip": false,
+  },
+
+  "mpris": {
+    "format": "<span color='#61C766'>{player_icon}</span> [{title}] <span color='#4DD0E1'>{status_icon}</span>",
+    // "format-paused": "{status_icon} {dynamic}",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "scroll-step": 5,
+    "player-icons": {
+      "default": "",
+      "musicfox": "",
+      "mpv": "󰿎 ",
+      "chromium": " ",
+      "firefox": " ",
+    },
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": "",
+    },
+    "max-length": 60,
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "AC0",
+    "interval": 5,
+    "states": {
+      "full": 100,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "<span color='#EC407A'>{icon}</span> {capacity}%",
+    "format-full": "<span color='#EC7875'>{icon}</span> Full",
+    "format-charging": "<span color='#61C766'></span> {capacity}%",
+    "format-icons": [""],
+    "max-length": 25,
+  },
+
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "<span color='#BA68C8'></span> {essid} <span color='#6C77BB'></span> {bandwidthDownBytes}",
+    "format-ethernet": "<span color='#BA68C8'>󰊗</span> {ipaddr} <span color='#6C77BB'></span> {bandwidthDownBytes}",
+    "format-disconnected": "<span color='#E57C46'></span>  Offline", //An empty format will hide the module.
+    // "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    // "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    // "tooltip-format-ethernet": "{ifname} ",
+    // "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    // "interval": 2,
+    // "format": " {bandwidthDownBits}  {bandwidthUpBits}",
+    // "on-click": "/usr/bin/footclient -T Monitor /usr/bin/btm",
+    // "on-click": "/usr/bin/alacritty -T Monitor -e /usr/bin/btm",
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "on-click": "swayosd-client --output-volume mute-toggle & play /usr/share/sounds/ocean/stereo/audio-volume-change.oga",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "swayosd-client --output-volume 2 --max-volume 150 & play /usr/share/sounds/ocean/stereo/audio-volume-change.oga",
+    "on-scroll-down": "swayosd-client --output-volume -2 --max-volume 150 & play /usr/share/sounds/ocean/stereo/audio-volume-change.oga",
+    "scroll-step": 1,
+    "tooltip": false,
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""],
+    },
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 150,
+    "orientation": "horizontal",
+  },
+
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", ""],
+  },
+
+  "backlight/slider": {
+    "device": "amdgpu_bl1",
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 12,
+  },
+
+  "custom/tray-collapsed": {
+    "format": " 󰇙 ",
+    "tooltip": false,
+  },
+
+  "group/sys-tray": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-left-to-right": false,
+    },
+    "modules": ["custom/tray-collapsed", "tray"],
+  },
+
+  "custom/shutdown": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "systemctl poweroff",
+  },
+
+  "custom/reboot": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "systemctl reboot",
+  },
+
+  "custom/lock": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "hyprlock",
+  },
+
+  "custom/firmware": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "systemctl reboot --firmware-setup",
+  },
+
+  "custom/suspend": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "hyprlock & sleep 1; systemctl suspend",
+  },
+
+  "custom/divider": {
+    "format": "|",
+    "tooltip": "flase",
+  },
+
+  "group/power": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/shutdown",
+      "custom/firmware",
+      "custom/divider",
+      "custom/suspend",
+      "custom/divider",
+      "custom/lock",
+      "custom/divider",
+      "custom/reboot",
+      "custom/divider",
+    ],
+  },
+
+  "custom/notifications": {
+    "tooltip": false,
+    "format": " {icon} ",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": "",
+    },
+
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+
+  "custom/sep": {
+    "tooltip": false,
+    "format": " ⏽ ",
+  },
+}
