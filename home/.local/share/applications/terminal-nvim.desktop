@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Terminal Neovim
+Exec=alacritty -e nvim %F
+Terminal=true
+Type=Application
+MimeType=text/plain;application/json;application/xml;text/x-python;text/x-csrc;text/x-c++src;
+NoDisplay=true
