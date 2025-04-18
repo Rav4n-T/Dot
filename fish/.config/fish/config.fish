@@ -1,5 +1,5 @@
-set -x DISPLAY_SERVER "X11"
-# set -x DISPLAY_SERVER "wayland"
+# set -x DISPLAY_SERVER "X11"
+set -x DISPLAY_SERVER "wayland"
 # Start Hyprland at login
 if status is-login
   if test -z "$DISPLAY" -a $XDG_VTNR = 1
