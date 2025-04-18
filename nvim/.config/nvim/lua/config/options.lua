@@ -16,7 +16,7 @@ M.options = {
 		laststatus = 0,
 		-- -- set columns of context
 		sidescrolloff = 10,
-		textwidth = 80,
+		textwidth = 800,
 		termguicolors = true,
 		-- set timeout
 		timeoutlen = 300,
