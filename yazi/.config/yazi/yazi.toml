@@ -17,6 +17,9 @@ edit = [
 play = [
 	{ run = 'mpv "$@"', orphan = true, for = "unix" },
 ]
+start = [
+	{ run = 'play "$@"', orphan = false, for = "unix" },
+]
 open = [
 	{ run = 'xdg-open "$@"', desc = "Open" },
 ]
@@ -25,6 +28,7 @@ open = [
 rules = [
 	{ mime = "text/*", use = "edit" },
 	{ mime = "video/*", use = "play" },
+  { mime = "audio/*", use = "start" },
   { mime = "image/*", use = "open" },
 
 	# { mime = "application/json", use = "edit" },
