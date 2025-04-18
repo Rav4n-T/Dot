@@ -1,0 +1,12 @@
+[[plugin.deps]]
+use = "hankertrix/augment-command"
+rev = "adebde0"
+hash = "eef0510c86fa6400f59ad03e0206e817"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "7a9f5b1"
+hash = "dd97eede8e20e59cd2604e8006e470e2"
+
+[flavor]
+deps = []

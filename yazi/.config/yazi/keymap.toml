@@ -1,0 +1,55 @@
+[[manager.prepend_keymap]]
+on   = "K"
+run  = "plugin augment-command -- parent_arrow -1"
+desc = "Move parent cursor up"
+
+[[manager.prepend_keymap]]
+on   = "J"
+run  = "plugin augment-command -- parent_arrow 1"
+desc = "Move parent cursor down"
+
+[[manager.prepend_keymap]]
+on   = "k"
+run  = "plugin augment-command -- arrow -1"
+desc = "Move parent cursor up"
+
+[[manager.prepend_keymap]]
+on   = "j"
+run  = "plugin augment-command -- arrow 1"
+desc = "Move parent cursor down"
+
+[[manager.prepend_keymap]]
+on   = "l"
+run  = "plugin augment-command -- enter"
+desc = "Enter the child directory, or open the file"
+
+[[manager.prepend_keymap]]
+on   = "D"
+run  = "plugin augment-command -- remove --force"
+desc = "Move the files to the trash"
+
+[[manager.prepend_keymap]]
+on   = "d"
+run  = "plugin augment-command -- remove --permanently --force"
+desc = "Permanently delete the files"
+
+[[manager.prepend_keymap]]
+on   = "r"
+run  = "plugin augment-command -- rename --cursor=start --empty=stem"
+desc = "Rename a file or directory"
+
+[[manager.prepend_keymap]]
+on   = "p"
+run  = "plugin augment-command -- paste"
+desc = "Paste into the hovered directory or CWD"
+
+[[manager.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
+desc = "Use udisk2 mount usb"
+
+
+[[ input.prepend_keymap ]]
+on   = [ "<Esc>" ]
+run  = "close"
+desc = "Cancel input" 
