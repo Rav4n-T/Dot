@@ -1,14 +1,18 @@
 #
 # wm independent hotkeys
 #
+#
+# Polybar
+super + p
+  $HOME/.config/polybar/launch.sh --forest
 
 # terminal emulator
 super + Return
 	alacritty	
 
 # program launcher
-super + @space
-	dmenu_run
+super + r
+	rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/forest/scripts/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -17,6 +21,14 @@ super + Escape
 #
 # bspwm hotkeys
 #
+
+
+# TerminalfileManager
+super + e
+  alacritty -T Yazi -e /usr/bin/yazi
+# Notes 
+# super + Escape
+#   alacritty -T Notes -o 'working_directory="/home/Rav4n/Projectes/Notes"' -e /usr/bin/nvim index.norg
 
 # quit/restart bspwm
 super + shift + {q,r}
@@ -63,16 +75,16 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
+# super + {_,shift + }c
+# 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+# super + bracket{left,right}
+# 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# super + {grave,Tab}
+# 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -119,3 +131,15 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Audio
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioLowerVolume
+  pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Brightness
+XF86MonBrightness{Up,Down}
+  brightnessctl s 5%{+,-}
