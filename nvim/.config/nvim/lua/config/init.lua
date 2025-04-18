@@ -14,8 +14,8 @@ function M.setup()
 	-- autocommands
 	require("config.fn")
 	-- colorschema
-	vim.cmd.colorscheme("catppuccin")
-	-- vim.cmd.colorscheme("everforest")
+	-- vim.cmd.colorscheme("catppuccin")
+	vim.cmd.colorscheme("everforest")
 	-- vim.cmd.colorscheme("gruvbox")
 	-- override_ui_input
 	-- require("ui.input").override_ui_input()

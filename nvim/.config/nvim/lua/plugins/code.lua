@@ -1,7 +1,7 @@
 return {
 	{
-		dir = "~/Projectes/Git/fittencode.nvim",
-		-- "luozhiya/fittencode.nvim",
+		-- dir = "~/Projectes/Git/fittencode.nvim",
+		"luozhiya/fittencode.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },
 		config = function()
 			local utils = require("utils.cmp")

@@ -5,8 +5,8 @@ local M = {
 
 		event = { "InsertEnter" },
 		dependencies = {
-			-- { "luozhiya/fittencode.nvim" },
-			{ dir = "~/Projectes/Git/fittencode.nvim" },
+			{ "luozhiya/fittencode.nvim" },
+			-- { dir = "~/Projectes/Git/fittencode.nvim" },
 		},
 		-- use a release tag to download pre-built binaries
 		version = "1.*",
