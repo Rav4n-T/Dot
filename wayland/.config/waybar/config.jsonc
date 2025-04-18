@@ -117,17 +117,24 @@
     "interval": 5,
     "states": {
       "full": 100,
-      "start": 99,
+      "good": 99,
       "warning": 30,
       "critical": 15,
     },
     "format": "<span color='#4DD0E1'>{icon}</span> {capacity}%",
     "format-full": "<span color='#61C766'>{icon}</span> Full",
-    "format-warning": "<span color='#EC7875'>{icon}</span> Full",
-    "format-critical": "<span color='#EC407A'>{icon}</span> Full",
-    "format-charging": "<span color='#61C766'></span> {capacity}%",
-    "format-icons": [""],
+    "format-warning": "<span color='#EC7875'>{icon}</span> {capacity}%",
+    "format-critical": "<span color='#EC407A'>{icon}</span> {capacity}%",
+    "format-charging": "<span color='#61C766'>{icon}</span> {capacity}%",
+    // "format-charging": "<span color='#61C766'></span> {capacity}%",
+    // "format-icons": ["", ""],
     "max-length": 25,
+    //"format-icons": ["", "", "", "", "", "", "", "","", ""]
+    "format-icons": {
+      "default": ["", "", "", "", "", "", "", "", "", ""],
+      "charging": ["", "", "", "", "", "", "", ""],
+      "plugged": "ﮣ",
+    },
   },
 
   "network": {
