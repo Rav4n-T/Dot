@@ -2,11 +2,23 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-xrandr --newmode "3840x2160_60.00"  712.75  3840 4152 4576 5312  2160 2163 2168 2237 -hsync +vsync
-xrandr --addmode Virtual1 "3840x2160_60.00"
-xrandr --output Virtual1 --mode 3840x2160_60.00
+# xrandr --newmode "3840x2160_60.00"  712.75  3840 4152 4576 5312  2160 2163 2168 2237 -hsync +vsync
+# xrandr --addmode Virtual1 "3840x2160_60.00"
+# xrandr --output Virtual1 --mode 3840x2160_60.00
 
-bspc monitor -d I II III IV V VI
+/usr/bin/lxpolkit &
+
+picom &
+
+fcitx5 -d &
+
+feh --bg-scale ~/Pictures/Wallpapers/bg.png &
+
+xsetroot -cursor_name left_ptr &
+
+$HOME/.config/polybar/launch.sh --forest &
+
+bspc monitor -d 1 2 3 4 5 6
 
 bspc config border_width         2
 bspc config window_gap          10
@@ -15,8 +27,11 @@ bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+bspc rule -a KeePassXC state=floating center=on
+
+bspc rule -a blueman-manager state=floating center=on
+bspc rule -a pavucontrol state=floating center=on
+bspc rule -a Alacritty:Alacritty:Yazi state=floating center=on rectangle='1200x800+0+0'
