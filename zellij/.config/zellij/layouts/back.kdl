@@ -1,0 +1,50 @@
+layout {
+    default_tab_template {
+      pane size=1 borderless=true{
+        plugin location="zellij:compact-bar"
+      }
+      children
+    }
+
+    tab_template name="code_tab" {
+      pane size=1 borderless=true{
+        plugin location="zellij:compact-bar"
+      }
+      pane size="80%"
+      pane size="20%" split_direction="vertical" {
+        pane
+        pane
+      }
+
+    }
+
+  // horizontal || vertical
+    tab_template name="work_tab" {
+      pane size=1 borderless=true{
+          plugin location="zellij:compact-bar"
+      }
+      pane split_direction="vertical" {
+          pane
+          pane split_direction="horizontal" {
+              pane
+              pane
+          }
+      }
+    }
+
+    tab name="Music" cwd="~/Music" {
+      pane command="musicfox"
+    }
+    tab name="Default" cwd="~"
+    // tab name="Memo" cwd="~/Persion/Memorandum" {
+    //   pane edit="./"
+    // }
+    work_tab name="SSH" cwd="/home/Rav4n/.ssh"
+    // tab name="NVIM" cwd="/home/Rav4n/.config/nvim" {
+    //   pane edit="./init.lua"
+    // }
+    code_tab name="P-Forent" cwd="~/Projectes"
+    code_tab name="P-Backend" cwd="~/Projectes"
+    code_tab name="W-Forent" cwd="~/Workspaces"
+    code_tab name="W-Backend" cwd="~/Workspaces"
+}

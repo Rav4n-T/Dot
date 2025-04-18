@@ -1,0 +1,20 @@
+layout {
+    default_tab_template {
+      pane size=1 borderless=true{
+        plugin location="zellij:compact-bar"
+      }
+      children
+    }
+
+    tab_template name="code_tab" {
+      pane size=1 borderless=true{
+        plugin location="zellij:compact-bar"
+      }
+      pane size="80%"
+      pane size="20%" 
+    }
+    
+    code_tab name="Forent"
+    code_tab name="Backend"
+    tab name="Rest"
+}
