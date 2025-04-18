@@ -3,7 +3,7 @@
 * {
   font-family: "0xProto Nerd Font";
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 window#waybar {
@@ -17,7 +17,7 @@ window#waybar {
 
 tooltip {
   background: @background;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 tooltip label {
@@ -28,7 +28,7 @@ tooltip label {
 }
 
 #workspaces button {
-  padding: 0 10px;
+  padding: 0 8px;
   color: @cyan;
 }
 
@@ -56,13 +56,13 @@ tooltip label {
 #disk,
 #cpu,
 #memory {
-  margin: 6px 8px;
+  margin: 2px 8px;
   color: @foreground;
 }
 
 #window {
-  margin: 6px 10px;
-  padding: 0 10px;
+  margin: 2px 8px;
+  padding: 0 8px;
   border-radius: 4px;
 }
 
@@ -70,14 +70,14 @@ tooltip label {
 #mpd,
 #network {
   color: @foreground;
-  margin: 6px 0px;
+  margin: 2px 0px;
   padding: 0 10px;
   border-radius: 4px;
 }
 
 #mpd,
 #network {
-  margin: 6px 5px;
+  margin: 2px 5px;
 }
 
 #battery {
@@ -91,7 +91,7 @@ tooltip label {
 #custom-suspend,
 #custom-divider {
   padding: 0 5px;
-  margin: 6px 0px;
+  margin: 2px 0px;
   color: @cyan;
 }
 
@@ -100,7 +100,7 @@ tooltip label {
 }
 
 #custom-divider {
-  margin: 6px 0px;
+  margin: 2px 0px;
   padding: 0;
 }
 
@@ -125,13 +125,13 @@ tooltip label {
   background-color: @yellow;
 }
 #pulseaudio-slider trough {
-  min-height: 10px;
+  min-height: 4px;
   min-width: 80px;
   border-radius: 5px;
   background-color: @sep;
 }
 #pulseaudio-slider highlight {
-  min-width: 10px;
+  min-width: 4px;
   border-radius: 5px;
   background-color: @yellow;
 }
@@ -149,13 +149,13 @@ tooltip label {
 }
 
 #backlight-slider trough {
-  min-height: 10px;
+  min-height: 4px;
   min-width: 80px;
   border-radius: 5px;
   background-color: @sep;
 }
 #backlight-slider highlight {
-  min-width: 10px;
+  min-width: 4px;
   border-radius: 5px;
   background-color: @green;
 }
