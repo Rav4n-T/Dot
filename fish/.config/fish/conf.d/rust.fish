@@ -5,4 +5,4 @@ set -x RUSTUP_UPDATE_ROOT https://rsproxy.cn/rustup
 set -x PATH ~/.local/share/rust/cargo/bin $PATH
 
 alias cg="cargo"
-source "/home/rav4n/.local/share/rust/cargo/env.fish"
+#source "/home/rav4n/.local/share/rust/cargo/env.fish"

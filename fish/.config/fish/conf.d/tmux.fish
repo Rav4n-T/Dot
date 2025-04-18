@@ -1,8 +1,9 @@
-set -x TMUX_ENABLED true
+set -x TMUX_ENABLED false
 
 if status is-interactive
-  if type -q tmux; and test $TMUX_ENABLED = "true"
-    echo -ne '\e[5 q'
+
+  if test -n "$DISPLAY"; and type -q tmux; and test $TMUX_ENABLED = "true"
+    # echo -ne '\e[5 q'
     # 检查是否已经在一个 tmux 会话中
     if not set -q TMUX
         # 检查 tmux 是否有 DEFAULT 会话

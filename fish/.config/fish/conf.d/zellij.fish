@@ -9,8 +9,8 @@ set -x ZELLIJ_ENABLED false
 
 
 if status is-interactive
-  if type -q zellij; and test $ZELLIJ_ENABLED = "true"
-    echo -ne '\e[5 q'
+  if test -n "$DISPLAY"; and type -q zellij; and test $ZELLIJ_ENABLED = "true"
+    # echo -ne '\e[5 q'
     # Commands to run in interactive sessions can go here
     # Autostart zellij
     if not set -q ZELLIJ
