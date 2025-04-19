@@ -1,15 +1,15 @@
 {
   "scripts": {
     "soundsLow": {
-      "exec": "play /usr/share/sounds/ocean/freedesktop/dialog-information.oga",
+      "exec": "play /usr/share/sounds/freedesktop/stereo/dialog-information.oga",
       "urgency": "Low"
     },
     "soundsNorm": {
-      "exec": "play /usr/share/sounds/ocean/freedesktop/dialog-warning.oga",
+      "exec": "play /usr/share/sounds/freedesktop/stereo/dialog-warning.oga",
       "urgency": "Normal"
     },
     "soundsCrit": {
-      "exec": "play /usr/share/sounds/ocean/freedesktop/dialog-error.oga",
+      "exec": "play /usr/share/sounds/freedesktop/stereo/dialog-error.oga",
       "urgency": "Critical"
     }
   }
