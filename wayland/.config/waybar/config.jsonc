@@ -233,7 +233,8 @@
   "custom/suspend": {
     "format": "  ",
     "tooltip": false,
-    "on-click": "hyprlock & sleep 1; systemctl suspend",
+    // "on-click": "hyprlock & sleep 1; systemctl suspend",
+    "on-click": "systemctl hibernate",
   },
 
   "custom/divider": {
