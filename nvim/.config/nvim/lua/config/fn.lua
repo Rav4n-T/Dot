@@ -10,7 +10,7 @@ local group = add_augroup("stay_centered", { clear = true })
 -- highlight on yank
 add_command("TextYankPost", {
 	callback = function()
-		vim.highlight.on_yank({
+		vim.hl.on_yank({
 			higroup = "IncSearch",
 			timeout = 300,
 		})
