@@ -119,15 +119,15 @@ end
 
 -- diagnostics signs
 M.setDiagnosticsicon = function(opt)
-	for name, icon in pairs(require("config.options").icons.diagnostics) do
-		name = "DiagnosticSign" .. name
-		vim.fn.sign_define(name, {
-			text = icon, -- icon | ""
-			texthl = name, -- "name" | ""
-			linehl = "",
-			numhl = "", -- "name" | ""
-		})
-	end
+	-- for name, icon in pairs(require("config.options").icons.diagnostics) do
+	-- 	name = "DiagnosticSign" .. name
+	-- 	vim.fn.sign_define(name, {
+	-- 		text = icon, -- icon | ""
+	-- 		texthl = name, -- "name" | ""
+	-- 		linehl = "",
+	-- 		numhl = "", -- "name" | ""
+	-- 	})
+	-- end
 	vim.diagnostic.config(opt)
 end
 

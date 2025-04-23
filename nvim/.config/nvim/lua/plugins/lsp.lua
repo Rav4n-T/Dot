@@ -51,6 +51,20 @@ return {
 					source = "always",
 				},
 				severity_sort = true,
+				sign = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = " ",
+						[vim.diagnostic.severity.WARN] = " ",
+						[vim.diagnostic.severity.INFO] = "󰋼 ",
+						[vim.diagnostic.severity.HINT] = "󰌵 ",
+					},
+					numhl = {
+						[vim.diagnostic.severity.ERROR] = "",
+						[vim.diagnostic.severity.WARN] = "",
+						[vim.diagnostic.severity.HINT] = "",
+						[vim.diagnostic.severity.INFO] = "",
+					},
+				},
 			},
 			-- LSP Server Settings
 			servers = {
@@ -229,7 +243,8 @@ return {
 		---@param opts PluginLspOpts
 		config = function(_, opts)
 			local lspUtils = require("utils.lsp")
-			lspUtils.setDiagnosticsicon(opts.diagnostics)
+			vim.diagnostic.config(opts.diagnostics)
+			-- lspUtils.setDiagnosticsicon(opts.diagnostics)
 			lspUtils.setLspKeymap()
 			lspUtils.setFloatWindow()
 
