@@ -6,23 +6,19 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "modules-left": [
-    "hyprland/workspaces",
-    "custom/sep",
-    "cpu",
-    "memory",
-    "disk",
-  ],
+  "modules-left": ["hyprland/workspaces", "custom/sep", "network"],
 
   "modules-center": ["clock"],
   "modules-right": [
-    "battery",
-    "network",
-    "custom/sep",
     "pulseaudio",
-    "pulseaudio/slider",
+    // "pulseaudio/slider",
     "backlight",
-    "backlight/slider",
+    // "backlight/slider",
+    "custom/sep",
+    "battery",
+    "cpu",
+    "memory",
+    "disk",
     "custom/sep",
     "group/sys-tray",
     "custom/sep",
@@ -154,7 +150,7 @@
   },
 
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "on-click": "swayosd-client --output-volume mute-toggle & play /usr/share/sounds/ocean/stereo/audio-volume-change.oga",
     "on-click-right": "pavucontrol",
@@ -176,7 +172,7 @@
 
   "backlight": {
     "device": "amdgpu_bl1",
-    "format": "{icon}",
+    "format": "{icon} {percent}%",
     "format-icons": ["", "", "", "", ""],
   },
 

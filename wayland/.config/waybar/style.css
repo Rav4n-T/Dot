@@ -104,10 +104,12 @@ tooltip label {
   padding: 0;
 }
 
+#battery,
 #pulseaudio,
+#backlight,
 #custom-tray-collapsed,
 #tray {
-  margin: 0px 0px;
+  margin: 0px 6px;
 }
 
 #pulseaudio {
@@ -161,7 +163,7 @@ tooltip label {
 }
 
 #tray {
-  padding-right: 15px;
+  /* padding-right: 15px; */
 }
 
 #custom-notifications {
