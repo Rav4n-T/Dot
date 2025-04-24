@@ -23,7 +23,7 @@ local M = {
 	opts = {},
 	config = function(_, _)
 		local luasnip = require("luasnip")
-		local cmp = require("cmp")
+		local cmp = require("nvim.config.nvim.lua.plugins.old.cmp")
 		local kind_icons = require("config.options").icons.kind_icons
 
 		require("luasnip").setup({

@@ -1,8 +1,6 @@
 local M = {
 	{
 		"saghen/blink.cmp",
-		-- optional: provides snippets for the snippet source
-
 		event = { "InsertEnter" },
 		dependencies = {
 			{ "luozhiya/fittencode.nvim" },

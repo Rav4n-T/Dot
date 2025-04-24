@@ -1,63 +1,62 @@
 return {
+	{
+		"j-hui/fidget.nvim",
+		event = "VeryLazy",
+		config = function()
+			local fidget = require("fidget")
+			-- local map = vim.keymap.set
+			--
+			-- local IGNORE_MESSAGE = {
+			-- 	"textDocument/documentColor is not supported",
+			-- }
 
-		{
-			"j-hui/fidget.nvim",
-			event = "VeryLazy",
-			config = function()
-				local fidget = require("fidget")
-				-- local map = vim.keymap.set
-				--
-				-- local IGNORE_MESSAGE = {
-				-- 	"textDocument/documentColor is not supported",
-				-- }
-
-				fidget.setup({
-					progress = {
-						display = {
-							render_limit = 2,
-							progress_icon = { pattern = "meter", period = 1 },
-						},
+			fidget.setup({
+				progress = {
+					display = {
+						render_limit = 2,
+						progress_icon = { pattern = "meter", period = 1 },
 					},
-					notification = {
-						override_vim_notify = true,
-						configs = {
-							default = vim.tbl_extend("force", require("fidget.notification").default_config, {
-								name = "Notify",
-								icon = "󰅁󰅁",
-								icon_on_left = true,
-								icon_style = "NotifyINFOIcon",
-								debug_style = "NotifyDEBUGTitle",
-								info_style = "NotifyINFOTitle",
-								warn_style = "NotifyWARNTitle",
-								error_style = "NotifyERRORTitle",
-							}),
-						},
-
-						-- Conditionally redirect notifications to another backend
-						-- redirect = function(msg, level, opts)
-						-- 	for _, match in ipairs(IGNORE_MESSAGE) do
-						-- 		if msg:find(match) then
-						-- 			return true
-						-- 		end
-						-- 	end
-						-- 	if opts and opts.on_open then
-						-- 		return require("fidget.integration.nvim-notify").delegate(msg, level, opts)
-						-- 	end
-						-- end,
-						window = {
-							-- normal_hl = "NotifyINFOTitle",
-							winblend = 0,
-							-- align = "top",
-						},
-						view = {
-							-- stack_upwards = false,
-						},
+				},
+				notification = {
+					override_vim_notify = true,
+					configs = {
+						default = vim.tbl_extend("force", require("fidget.notification").default_config, {
+							name = "Notify",
+							icon = "󰅁󰅁",
+							icon_on_left = true,
+							icon_style = "NotifyINFOIcon",
+							debug_style = "NotifyDEBUGTitle",
+							info_style = "NotifyINFOTitle",
+							warn_style = "NotifyWARNTitle",
+							error_style = "NotifyERRORTitle",
+						}),
 					},
-				})
 
-				-- map("n", "<leader>nh", "<cmd>Fidget history<cr>", { desc = "Noice History", remap = true, silent = true })
-			end,
-		},
+					-- Conditionally redirect notifications to another backend
+					-- redirect = function(msg, level, opts)
+					-- 	for _, match in ipairs(IGNORE_MESSAGE) do
+					-- 		if msg:find(match) then
+					-- 			return true
+					-- 		end
+					-- 	end
+					-- 	if opts and opts.on_open then
+					-- 		return require("fidget.integration.nvim-notify").delegate(msg, level, opts)
+					-- 	end
+					-- end,
+					window = {
+						-- normal_hl = "NotifyINFOTitle",
+						winblend = 0,
+						-- align = "top",
+					},
+					view = {
+						-- stack_upwards = false,
+					},
+				},
+			})
+
+			-- map("n", "<leader>nh", "<cmd>Fidget history<cr>", { desc = "Noice History", remap = true, silent = true })
+		end,
+	},
 
 	{
 		"echasnovski/mini.indentscope",
@@ -168,31 +167,6 @@ return {
 		end,
 	},
 	{
-		"catppuccin/nvim",
-		event = "VeryLazy",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				transparent_background = true,
-				styles = {
-					comments = { "italic" },
-					conditionals = { "italic" },
-					-- loops = { "bold" },
-					functions = { "italic" },
-					-- keywords = {},
-					-- strings = { "italic" },
-					variables = { "italic" },
-					-- numbers = {},
-					-- booleans = { "bold" },
-					-- properties = { "italic" },
-					-- types = { "bold" },
-					operators = {},
-				},
-			})
-		end,
-	},
-	{
 		"stevearc/dressing.nvim",
 		event = "VeryLazy",
 		opts = {},
@@ -234,5 +208,79 @@ return {
 
 			hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 		end,
+	},
+
+	{
+		"gen740/SmoothCursor.nvim",
+		event = "CursorMoved",
+		opts = {
+			fancy = {
+				enable = true,
+				head = { cursor = "", texthl = "SmoothCursor", linehl = nil },
+			},
+		},
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {
+			cursor_color = "#ff8800",
+			stiffness = 0.3,
+			trailing_stiffness = 0.1,
+			trailing_exponent = 5,
+			hide_target_hack = true,
+			gamma = 1,
+		},
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		enabled = false,
+		cond = function()
+			local git_dir = vim.fn.finddir(".git", vim.fn.getcwd() .. ";")
+			if git_dir ~= "" then
+				return true
+			else
+				return false
+			end
+		end,
+		event = "BufEnter",
+		opts = {
+			signs = {
+				add = { text = "+" },
+				change = { text = "┃" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
+			},
+			signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+			numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
+			linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
+			word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+			watch_gitdir = {
+				interval = 1000,
+				follow_files = true,
+			},
+			attach_to_untracked = true,
+			current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+			current_line_blame_opts = {
+				virt_text = true,
+				virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+				delay = 1000,
+				ignore_whitespace = false,
+			},
+			current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
+			sign_priority = 6,
+			update_debounce = 100,
+			status_formatter = nil, -- Use default
+			max_file_length = 40000, -- Disable if file is longer than this (in lines)
+			preview_config = {
+				-- Options passed to nvim_open_win
+				border = "single",
+				style = "minimal",
+				relative = "cursor",
+				row = 0,
+				col = 1,
+			},
+		},
 	},
 }

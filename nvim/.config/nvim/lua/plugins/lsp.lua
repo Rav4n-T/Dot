@@ -9,7 +9,6 @@ return {
 			{ "saghen/blink.cmp" },
 			{
 				"utilyre/barbecue.nvim",
-				enabled = false,
 				name = "barbecue",
 				version = "*",
 				dependencies = {
