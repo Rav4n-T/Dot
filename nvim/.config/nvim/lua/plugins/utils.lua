@@ -89,6 +89,7 @@ return {
 				timeout = 3000,
 			},
 			picker = { enabled = true },
+			image = { enabled = true },
 			quickfile = { enabled = true },
 			scope = { enabled = true },
 			scroll = { enabled = false },
