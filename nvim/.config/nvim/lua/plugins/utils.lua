@@ -649,6 +649,7 @@ return {
 				{ "<leader>s", group = "Search" },
 				{ "<leader>t", group = "Toggle & Terminal" },
 				{ "<leader>w", group = "Lsp Workspace" },
+				{ "<leader>R", group = "Kulala" },
 			},
 		},
 		init = function()
