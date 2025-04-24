@@ -51,7 +51,7 @@ return {
 					source = "always",
 				},
 				severity_sort = true,
-				sign = {
+				signs = {
 					text = {
 						[vim.diagnostic.severity.ERROR] = " ",
 						[vim.diagnostic.severity.WARN] = " ",
