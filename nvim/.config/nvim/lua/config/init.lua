@@ -15,8 +15,8 @@ function M.setup()
 	require("config.fn")
 	-- colorschema
 	-- vim.cmd.colorscheme("catppuccin")
-	vim.cmd.colorscheme("everforest")
-	-- vim.cmd.colorscheme("gruvbox")
+	-- vim.cmd.colorscheme("everforest")
+	vim.cmd.colorscheme("gruvbox-material")
 	-- override_ui_input
 	-- require("ui.input").override_ui_input()
 	vim.filetype.add({
