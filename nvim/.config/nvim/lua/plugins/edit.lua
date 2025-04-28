@@ -54,19 +54,30 @@ return {
 		config = true,
 	},
 	{
-		dir = "~/Projectes/Git/autoclose.nvim",
-		-- "m4xshen/autoclose.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("autoclose").setup({
-				options = {
-					disabled_filetypes = { "text" },
-					disable_when_touch = true,
-					touch_regex = "[%w%[{]",
-					pair_spaces = true,
-					disable_command_mode = false,
-				},
-			})
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {
+			fast_wrap = {
+				map = "<C-e>",
+				chars = { "{", "[", "(", '"', "'", "`" },
+				pattern = [=[[%'%"%>%]%)%}%,]]=],
+				end_key = "j",
+				before_key = "h",
+				after_key = "l",
+				cursor_pos_before = false,
+				keys = "qwertyuiopzxcvbnmasdfghjkl",
+				manual_position = true,
+				highlight = "Search",
+				highlight_grey = "Comment",
+			},
+		},
+		config = function(_, opts)
+			local npairs = require("nvim-autopairs")
+			local autopair_utils = require("utils.autopair")
+			npairs.setup(opts)
+			autopair_utils.autospace()
+			autopair_utils.jsarrow()
+			autopair_utils.generics()
 		end,
 	},
 	{
