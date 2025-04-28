@@ -5,7 +5,6 @@ return {
 		dependencies = {
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
-			-- { "hrsh7th/cmp-nvim-lsp" },
 			{ "saghen/blink.cmp" },
 			{
 				"utilyre/barbecue.nvim",
@@ -243,7 +242,6 @@ return {
 		config = function(_, opts)
 			local lspUtils = require("utils.lsp")
 			vim.diagnostic.config(opts.diagnostics)
-			-- lspUtils.setDiagnosticsicon(opts.diagnostics)
 			lspUtils.setLspKeymap()
 			lspUtils.setFloatWindow()
 
