@@ -216,9 +216,9 @@ return {
 				end, { desc = "skip up match cursor" })
 
 				-- Add and remove cursors with control + left click.
-				layerSet("n", "<c-leftmouse>", mc.handleMouse)
-				layerSet("n", "<c-leftdrag>", mc.handleMouseDrag)
-				layerSet("n", "<c-leftrelease>", mc.handleMouseRelease)
+				-- layerSet("n", "<c-leftmouse>", mc.handleMouse)
+				-- layerSet("n", "<c-leftdrag>", mc.handleMouseDrag)
+				-- layerSet("n", "<c-leftrelease>", mc.handleMouseRelease)
 
 				layerSet({ "n", "x" }, "m", mc.toggleCursor, { desc = "toggle cursor" })
 				-- Select a different cursor as the main one.
@@ -226,7 +226,13 @@ return {
 				layerSet({ "n", "x" }, "<right>", mc.nextCursor, { desc = "select next cursor" })
 
 				-- Delete the main cursor.
-				-- layerSet({ "n", "x" }, "<leader>mx", mc.deleteCursor, { desc = "del cursor" })
+				layerSet({ "n", "x" }, "<leader>mx", mc.deleteCursor, { desc = "del cursor" })
+
+				-- Align cursor columns.
+				layerSet({ "n", "x" }, "<leader>m=", mc.alignCursors, { desc = "align cursor columns" })
+				-- Increment/decrement sequences, treaing all cursors as one sequence.
+				layerSet({ "n", "x" }, "<leader>mi", mc.sequenceIncrement, { desc = "increment sequences cursor" })
+				layerSet({ "n", "x" }, "<leader>md", mc.sequenceDecrement, { desc = "decrement sequences cursor" })
 
 				-- Enable and clear cursors using escape.
 				layerSet("n", "<esc>", function()
