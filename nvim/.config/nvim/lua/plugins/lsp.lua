@@ -98,22 +98,19 @@ return {
 						},
 					},
 				},
-				-- clangd = {
-				-- 	cmd = { "clangd", "--header-insertion=iwyu", "--clang-tidy" },
-				-- 	root_dir = function(fname)
-				-- 		return require("lspconfig.util").root_pattern(
-				-- 			".clangd",
-				-- 			".clang-tidy",
-				-- 			".clang-format",
-				-- 			"compile_commands.json",
-				-- 			"compile_flags.txt",
-				-- 			"configure.ac",
-				-- 			".vs",
-				-- 			".git"
-				-- 		)(fname)
-				-- 	end,
-				-- 	single_file_support = true,
-				-- },
+				clangd = {
+					cmd = { "clangd", "--header-insertion=iwyu", "--clang-tidy" },
+					root_markers = {
+						".clangd",
+						".clang-tidy",
+						".clang-format",
+						"compile_commands.json",
+						"compile_flags.txt",
+						"configure.ac",
+						".git",
+					},
+					single_file_support = true,
+				},
 				rust_analyzer = {
 					settings = {
 						["rust-analyzer"] = {
@@ -134,17 +131,17 @@ return {
 						},
 					},
 				},
-				-- volar = {
-				-- 	filetypes = { "vue" },
-				-- 	init_options = {
-				-- 		LanguageFeatures = {
-				-- 			completion = {
-				-- 				preferredTagNameCase = "kebab",
-				-- 				preferredAttrNameCase = "camel",
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
+				volar = {
+					filetypes = { "vue" },
+					init_options = {
+						LanguageFeatures = {
+							completion = {
+								preferredTagNameCase = "kebab",
+								preferredAttrNameCase = "camel",
+							},
+						},
+					},
+				},
 				gopls = {
 					init_options = {
 						hints = {
@@ -225,19 +222,20 @@ return {
 				-- 		},
 				-- 	},
 				-- },
-				-- cssls = {
-				-- 	filetypes = {
-				-- 		"css",
-				-- 		"scss",
-				-- 		"less",
-				-- 	},
-				-- 	settings = {
-				-- 		css = { validate = true, lint = { unknownAtRules = "ignore" } },
-				-- 		less = { validate = true, lint = { unknownAtRules = "ignore" } },
-				-- 		scss = { validate = true, lint = { unknownAtRules = "ignore" } },
-				-- 	},
-				-- 	single_file_support = true,
-				-- },
+
+				cssls = {
+					filetypes = {
+						"css",
+						"scss",
+						"less",
+					},
+					settings = {
+						css = { validate = true, lint = { unknownAtRules = "ignore" } },
+						less = { validate = true, lint = { unknownAtRules = "ignore" } },
+						scss = { validate = true, lint = { unknownAtRules = "ignore" } },
+					},
+					single_file_support = true,
+				},
 				marksman = {},
 			},
 			setup = {},
