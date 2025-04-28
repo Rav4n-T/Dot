@@ -67,6 +67,18 @@ return {
 			-- LSP Server Settings
 			servers = {
 				lua_ls = {
+					root_markers = {
+						"lazy-lock.json",
+						".luarc.json",
+						".luarc.jsonc",
+						".luacheckrc",
+						".stylua.toml",
+						"stylua.toml",
+						"selene.toml",
+						"selene.yml",
+						".gitignore",
+						".git",
+					},
 					settings = {
 						Lua = {
 							hint = { enable = true },
