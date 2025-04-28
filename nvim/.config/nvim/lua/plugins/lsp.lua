@@ -83,12 +83,6 @@ return {
 								},
 								checkThirdParty = false,
 							},
-							-- completion = {
-							-- 	callSnippet = "Replace",
-							-- },
-							-- telemetry = {
-							-- 	enable = false,
-							-- },
 						},
 					},
 				},
@@ -219,7 +213,6 @@ return {
 				-- 		},
 				-- 	},
 				-- },
-				--
 				-- cssls = {
 				-- 	filetypes = {
 				-- 		"css",
@@ -234,7 +227,6 @@ return {
 				-- 	single_file_support = true,
 				-- },
 				marksman = {},
-				-- markdown_oxide = {},
 			},
 			setup = {},
 		},
