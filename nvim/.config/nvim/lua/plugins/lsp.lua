@@ -249,7 +249,6 @@ return {
 			lspUtils.setLspKeymap()
 			lspUtils.setFloatWindow()
 
-			local lspconfig = require("lspconfig")
 			local ensure_installed = {} ---@type string[]
 
 			for server, config in pairs(opts.servers or {}) do
@@ -265,7 +264,9 @@ return {
 				config.on_attach = lspUtils.AttachFn
 
 				-- setup lsp
-				lspconfig[server].setup(config)
+				-- lspconfig[server].setup(config)
+				vim.lsp.config(server, config)
+				vim.lsp.enable(server)
 			end
 
 			-- mason-lspconfig
