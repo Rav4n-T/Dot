@@ -16,11 +16,11 @@ return {
 		end,
 	},
 	{
-		"echasnovski/mini.surround",
-		version = false,
-		event = "InsertEnter",
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "BufEnter",
 		config = function()
-			require("mini.surround").setup()
+			require("nvim-surround").setup({})
 		end,
 	},
 	{

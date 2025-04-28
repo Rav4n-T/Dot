@@ -81,11 +81,11 @@ return {
 		end,
 	},
 	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "BufEnter",
+		"echasnovski/mini.surround",
+		version = false,
+		event = "InsertEnter",
 		config = function()
-			require("nvim-surround").setup({})
+			require("mini.surround").setup()
 		end,
 	},
 
