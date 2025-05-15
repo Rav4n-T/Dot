@@ -1,0 +1,59 @@
+@import "style/everforest.css";
+
+@define-color text #d3c6aa;
+@define-color select_text #475258;
+@define-color background #2d353b;
+@define-color outbox_bg #a7c080;
+
+window {
+  margin: 0px;
+  border-radius: 0px;
+}
+
+#input {
+  margin: 6px 10px 10px 10px;
+  padding: 0 10px;
+  border: none;
+  color: @text;
+  /* outline: none; */
+}
+/* #input:focus { */
+/*   outline-style: none; */
+/*   outline-color: @background; */
+/*   border: 2px solid @background; */
+/* } */
+
+#outer-box {
+  padding: 4px;
+  border: 2px solid @outbox_bg;
+  border-radius: 4px;
+  background-color: @background;
+}
+
+#scroll {
+  border: none;
+  border-radius: 15px;
+}
+
+#img {
+  margin-right: 8px;
+}
+
+#text:selected {
+  color: @select_text;
+  margin: 0px 0px;
+  border: none;
+  border-radius: 10px;
+}
+
+#entry {
+  margin: 2px 2px;
+  padding: 4px 8px;
+  color: @text;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+#entry:selected {
+  background-color: @outbox_bg;
+}
