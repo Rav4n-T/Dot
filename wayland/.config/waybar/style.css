@@ -1,4 +1,4 @@
-@import "style/everforest.css";
+@import "style/gruvbox.css";
 
 * {
   font-family: "0xProto Nerd Font";
@@ -8,10 +8,10 @@
 
 window#waybar {
   /* background: transparent; */
+  margin: 4px;
   background-color: @background;
-  border-radius: 0;
   color: @foreground;
-  /* border-bottom: 1px solid #374145; */
+  padding: 4px 0;
   /* opacity: 0.9; */
 }
 
@@ -25,10 +25,11 @@ tooltip label {
 }
 
 #workspaces {
+  margin: 4px;
 }
 
 #workspaces button {
-  padding: 0 8px;
+  padding: 0px 8px;
   color: @cyan;
 }
 
@@ -41,7 +42,7 @@ tooltip label {
 }
 
 #workspaces button.active {
-  color: @pink;
+  color: @yellow;
 }
 
 #workspaces button.urgent {
