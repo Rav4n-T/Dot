@@ -1,0 +1,59 @@
+[Default Applications]
+# 文本类 - 用 alacritty 打开 nvim
+text/plain=terminal-nvim.desktop
+application/json=terminal-nvim.desktop
+application/xml=terminal-nvim.desktop
+application/javascript=terminal-nvim.desktop
+text/x-python=terminal-nvim.desktop
+text/x-csrc=terminal-nvim.desktop
+text/x-c++src=terminal-nvim.desktop
+application/x-shellscript=terminal-nvim.desktop
+
+# 图片类
+image/png=imv.desktop
+image/jpeg=imv.desktop
+image/gif=imv.desktop
+image/webp=imv.desktop
+image/svg+xml=imv.desktop
+
+# 视频 / 音频
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+audio/mpeg=mpv.desktop
+audio/x-wav=mpv.desktop
+audio/flac=mpv.desktop
+audio/ogg=mpv.desktop
+
+# PDF (如果你装了 zathura)
+application/pdf=zathura.desktop
+
+# 文件夹打开
+inode/directory=alacritty.desktop
+
+# 连接和html
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/chrome=zen-browser.desktop
+text/html=chromium.desktop
+application/x-extension-htm=zen-browser.desktop
+application/x-extension-html=zen-browser.desktop
+application/x-extension-shtml=zen-browser.desktop
+application/xhtml+xml=zen-browser.desktop
+application/x-extension-xhtml=zen-browser.desktop
+application/x-extension-xht=zen-browser.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop
+
+[Added Associations]
+x-scheme-handler/http=zen-browser.desktop;
+x-scheme-handler/https=zen-browser.desktop;
+x-scheme-handler/chrome=zen-browser.desktop;
+text/html=zen-browser.desktop;
+application/x-extension-htm=zen-browser.desktop;
+application/x-extension-html=zen-browser.desktop;
+application/x-extension-shtml=zen-browser.desktop;
+application/xhtml+xml=zen-browser.desktop;
+application/x-extension-xhtml=zen-browser.desktop;
+application/x-extension-xht=zen-browser.desktop;
+
+
